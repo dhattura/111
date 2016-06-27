@@ -1,0 +1,24 @@
+<section>
+  <div class="page-header">
+    <h1>{{vm.testcrud._id ? 'Edit Testcrud' : 'New Testcrud'}}</h1>
+  </div>
+  <div class="col-md-12">
+    <form name="vm.form.testcrudForm" class="form-horizontal" ng-submit="vm.save(vm.form.testcrudForm.$valid)" novalidate>
+      <fieldset>
+        <div class="form-group" show-errors>
+          <label class="control-label" for="name">Name</label>
+          <input name="name" type="text" ng-model="vm.testcrud.name" id="name" class="form-control" placeholder="Name" required>
+          <div ng-messages="vm.form.testcrudForm.name.$error" role="alert">
+            <p class="help-block error-text" ng-message="required">Testcrud name is required.</p>
+          </div>
+        </div>
+        <div class="form-group">
+          <button type="submit" class="btn btn-default">{{vm.testcrud._id ? 'Update' : 'Create'}}</button>
+        </div>
+        <div ng-show="vm.error" class="text-danger">
+          <strong ng-bind="vm.error"></strong>
+        </div>
+      </fieldset>
+    </form>
+  </div>
+</section>
